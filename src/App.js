@@ -6,26 +6,37 @@ import ContactForm from './components/ContactForm/ContactForm';
 class App extends Component {
   state = {
     inputValue: '',
-    name: '',
-    tel: '',
+    // name: '',
+    // tel: '',
   };
 
-  handelNameChange = event => {
-    this.setState({ name: event.currentTarget.value });
-  };
+  // handleChange = event => {
+  //   const { name, value } = event.currentTarget;
+  //   this.setState({ [name]: value });
+  // };
 
-  handelTelChange = event => {
-    this.setState({ tel: event.currentTarget.value });
-  };
+  // handleSubmit = event => {
+  //   event.preventDefault();
+  //   console.log(this.state);
+  // };
+
+  // handleNameChange = event => {
+  //   this.setState({ name: event.currentTarget.value });
+  // };
+
+  // handleTelChange = event => {
+  //   this.setState({ tel: event.currentTarget.value });
+  // };
 
   render() {
     return (
       <>
         <h1>Phonebook</h1>
         <ContactForm
-          input={this.state}
-          optionsName={this.handelNameChange}
-          optionsTel={this.handelTelChange}
+          onSubmit={this.formSubmitHandler}
+          // input={this.state}
+          // options={this}
+          // optionsTel={this.handleTelChange}
         />
         <h2>Contacts</h2>
         {/* <Filter ... /> */}
