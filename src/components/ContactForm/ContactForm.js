@@ -13,12 +13,20 @@ class ContactForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+
     this.props.onSubmit(this.state);
+
+    this.reset();
   };
 
-  formSubmitHandler = data => {
-    console.log(data);
+  // formSubmitHandler = data => {
+  //   console.log(data);
+  // };
+
+  reset = () => {
+    this.setState({ name: '', tel: '' });
   };
+
   render() {
     return (
       <form style={{ display: 'grid' }} onSubmit={this.handleSubmit}>
@@ -48,7 +56,9 @@ class ContactForm extends Component {
             onChange={this.handleChange}
           />
         </label>
-        <button type="submit">Отправить</button>
+        <button type="submit" style={{ width: '300px' }}>
+          Отправить
+        </button>
       </form>
     );
   }

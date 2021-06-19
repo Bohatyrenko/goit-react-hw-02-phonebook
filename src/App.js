@@ -6,8 +6,8 @@ import ContactForm from './components/ContactForm/ContactForm';
 class App extends Component {
   state = {
     inputValue: '',
-    // name: '',
-    // tel: '',
+    name: '',
+    tel: '',
   };
 
   // handleChange = event => {
@@ -28,12 +28,16 @@ class App extends Component {
   //   this.setState({ tel: event.currentTarget.value });
   // };
 
+  formSubmit = event => {
+    console.log(event);
+  };
+
   render() {
     return (
       <>
         <h1>Phonebook</h1>
         <ContactForm
-          onSubmit={this.formSubmitHandler}
+          onSubmit={this.formSubmit}
           // input={this.state}
           // options={this}
           // optionsTel={this.handleTelChange}
